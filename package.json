@@ -1,0 +1,30 @@
+{
+  "name": "@dialgem/mcp",
+  "version": "0.1.0",
+  "description": "Dialgem MCP server: lets an AI assistant manage voice agents, calls and phone numbers over the Model Context Protocol.",
+  "keywords": ["dialgem", "voice-ai", "mcp", "model-context-protocol"],
+  "license": "Apache-2.0",
+  "author": "Dialgem",
+  "type": "module",
+  "bin": { "dialgem-mcp": "./dist/main.js" },
+  "files": ["dist", "README.md", "LICENSE", "NOTICE"],
+  "engines": { "node": ">=20" },
+  "publishConfig": { "access": "public" },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "@dialgem/sdk": "^1.0.0",
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0"
+  }
+}
